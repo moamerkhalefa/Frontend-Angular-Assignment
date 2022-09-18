@@ -1,0 +1,65 @@
+<div class="sidebar-is-reduced">
+  <header class="l-header">
+      <div class="l-header__inner clearfix">
+          <div class="c-header-icon js-hamburger" (click)="onClickMenu()">
+              <div class="hamburger-toggle" [ngClass]="MenuStatus ? 'is-opened' : ''">
+                <span class="bar-top"></span><span class="bar-mid"></span><span class="bar-bot"></span></div>
+          </div>
+          <div class="c-search">
+              <span *ngIf="logeduserData" style=" vertical-align: middle; font-size: 15px; font-weight: bold; line-height: 63px; margin: 1px 10px;">
+                {{logeduserData.firstName}} {{logeduserData.lastName}}
+            </span>
+          </div>
+          <div class="header-icons-group">
+              <div class="c-header-icon has-dropdown">
+                  <span class="c-badge c-badge--red c-badge--header-icon animated swing">0</span><i class="fa fa-bell"></i>
+                  <div class="c-dropdown c-dropdown--notifications">
+                      <div class="c-dropdown__header"></div>
+                      <div class="c-dropdown__content"></div>
+                  </div>
+              </div>
+              <div (click)="onClickLogout()" class="c-header-icon logout"><i class="fa fa-power-off"></i></div>
+          </div>
+      </div>
+  </header>
+  <div class="l-sidebar">
+      <div class="logo">
+          <div class="logo__txt">Maqta</div>
+      </div>
+      <div class="l-sidebar__content">
+          <nav class="c-menu js-menu">
+              <ul class="u-list">
+                  <li routerLink="/home/profile" routerLinkActive="is-active" class="c-menu__item" data-toggle="tooltip" ngbTooltip="Profile">
+                      <div class="c-menu__item__inner">
+                        <i class="far fa-address-card"></i>
+                          <div class="c-menu-item__title"><span>Profile</span></div>
+                      </div>
+                  </li>
+                  <li routerLink="/home/employees" routerLinkActive="is-active" class="c-menu__item has-submenu" data-toggle="tooltip" title="Employees">
+                      <div class="c-menu__item__inner">
+                          <i class="fa fa-users"></i>
+                          <div class="c-menu-item__title"><span>Employees</span></div>
+                      </div>
+                  </li>
+                  <li routerLink="/home/newEmployee" routerLinkActive="is-active" class="c-menu__item has-submenu" data-toggle="tooltip" title="Add Employee">
+                      <div class="c-menu__item__inner">
+                          <i class="fa fa-user-plus"></i>
+                          <div class="c-menu-item__title"><span>Add Employee</span></div>
+                      </div>
+                  </li>
+                  <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Settings">
+                      <div class="c-menu__item__inner">
+                          <i class="fa fa-cogs"></i>
+                          <div class="c-menu-item__title"><span>Settings</span></div>
+                      </div>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </div>
+</div>
+<main class="l-main">
+  <div class="content-wrapper content-wrapper--with-bg">
+    <router-outlet></router-outlet>
+  </div>
+</main>

@@ -1,0 +1,22 @@
+<div class="container active">
+    <div class="user signupBx">
+      <div class="formBx">
+        <form [formGroup]="formModel" (ngSubmit)="onSubmit()" autocomplete="off">
+          <h2>Create an account</h2>
+          <input type="text" formControlName="FirstName" placeholder="First Name" required />
+          <input type="text" formControlName="LastName"  placeholder="Last Name" required />
+          <input type="text" formControlName="Username" placeholder="Username" required />
+          <input type="email" formControlName="Email"  placeholder="Email Address" required />
+          <input type="password" formControlName="Password"  placeholder="Create Password" required />
+          <input type="submit" name="" value="Sign Up" />
+          <p class="signup">
+            Already have an account ?
+            <span routerLink="/user/login">Sign in.</span>
+          </p>
+        </form>
+      </div>
+      <div class="imgBx">
+        <img src="/assets/Images/SignUp.png" alt="" />
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,11 @@
+<h1 class="page-title">User Profile</h1>
+<div class="page-content" style="padding: 0px;border-radius: 8px;">
+    <div class="card" *ngIf="userProfileData">
+        <h5 class="card-header">Loged User Data</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{userProfileData.firstName}} {{userProfileData.lastName}}</h5>
+            <p class="card-text">{{userProfileData.email}}</p>
+            <p class="card-text">{{userProfileData.userName}}</p>
+        </div>
+    </div>
+</div>

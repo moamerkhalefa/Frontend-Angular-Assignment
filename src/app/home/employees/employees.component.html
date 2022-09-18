@@ -1,0 +1,39 @@
+<h1 class="page-title">Employees</h1>
+<div class="page-content" style="padding:0px;">
+    <table class="table table-bordered" style="margin:0px;">
+        <thead>
+            <th style="border: 1px solid #d0d0d0;text-align: center;padding: 0.5rem 0.5rem;"></th>
+            <th style="border: 1px solid #d0d0d0;text-align: center;padding: 0.5rem 0.5rem;">#</th>
+            <th style="border: 1px solid #d0d0d0;padding: 0.5rem 0.5rem;">Full Name</th>
+            <th style="border: 1px solid #d0d0d0;padding: 0.5rem 0.5rem;">Email</th>
+            <th style="border: 1px solid #d0d0d0;padding: 0.5rem 0.5rem;">Phone</th>
+            <th style="border: 1px solid #d0d0d0;padding: 0.5rem 0.5rem;">Job Title</th>
+            <th style="border: 1px solid #d0d0d0;padding: 0.5rem 0.5rem;">Department</th>
+            <th style="border: 1px solid #d0d0d0;padding: 0.5rem 0.5rem;">DOB</th>
+            <th style="border: 1px solid #d0d0d0;padding: 0.5rem 0.5rem;">Salary</th>
+            <th style="border: 1px solid #d0d0d0;text-align: center;padding: 0.5rem 0.5rem;">Edit</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Emp of Emplist">
+               <td style="text-align:center;">
+                <div (click)="onDeleteEmployee(Emp.employeeId)">
+                  <i style="cursor:pointer;color: #ee717d;font-size: 1.2em;" class="fas fa-trash-alt"></i>
+                </div>
+               </td>
+               <td style="text-align:center;">{{Emp.employeeId}}</td>
+               <td>{{Emp.firstName}} {{Emp.lastName}}</td>
+               <td>{{Emp.emailAddress}}</td>
+               <td>{{Emp.phoneNumber}}</td>
+               <td>{{Emp.jobTitle}}</td>
+               <td>{{Emp.department}}</td>
+               <td>{{Emp.dateOfBrirth}}</td>
+               <td>{{Emp.salary}}</td>
+               <td style="text-align:center;">
+                <div (click)="onEditEmployee(Emp)">
+                   <i style="cursor:pointer;color: #7c74db;font-size: 1.2em;" class="fa fa-edit"></i>
+                </div>
+               </td>
+            </tr>
+        </tbody>
+      </table>
+</div>

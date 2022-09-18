@@ -1,0 +1,41 @@
+<h1 class="page-title">Add or Edit Employee</h1>
+<div class="page-content">
+    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmitEmpData(form)" autocomplete="off">
+        <input type="hidden" name="employeeId" [value]="formData.employeeId">
+        <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="firstName" #firstName="ngModel" [(ngModel)]="formData.firstName" required>
+        </div>
+        <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="lastName" #lastName="ngModel" [(ngModel)]="formData.lastName" required>
+        </div>
+        <div class="col-6">
+            <label for="emailAddress" class="form-label">Email Address</label>
+            <input type="email" class="form-control" name="emailAddress" #emailAddress="ngModel" [(ngModel)]="formData.emailAddress" required>
+        </div>
+        <div class="col-6">
+            <label for="PhoneNumber" class="form-label">Phone</label>
+            <input type="text" class="form-control" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="formData.phoneNumber">
+        </div>
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Job Title</label>
+            <input type="text" class="form-control" name="jobTitle" #jobTitle="ngModel" [(ngModel)]="formData.jobTitle" required>
+        </div>
+        <div class="col-md-6">
+            <label for="inputZip" class="form-label">Department</label>
+            <input type="text" class="form-control" name="department" #department="ngModel" [(ngModel)]="formData.department" required>
+        </div>
+        <div class="col-md-6">
+            <label for="dateOfBrirth" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" name="dateOfBrirth" #dateOfBrirth="ngModel" [(ngModel)]="formData.dateOfBrirth" required>
+        </div>
+        <div class="col-md-6">
+            <label for="inputZip" class="form-label">salary</label>
+            <input type="number" class="form-control" name="salary" #salary="ngModel" [(ngModel)]="formData.salary">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-success" [disabled]="form.invalid">Save</button>
+        </div>
+    </form>
+</div>
